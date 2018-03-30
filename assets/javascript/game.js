@@ -20,10 +20,11 @@ document.onkeyup = function(event) {
     console.log(randomLetter);
     var userPick = event.key; //User enters a key, and the script recognizes
     if (userPick !== randomLetter) {
-        guessesLeft --;
-        document.getElementById("guessesLeft").textContent = guessesLeft;
-        letterGuess.push(userPick);
-        document.getElementById("guessedLetters").textContent = letterGuess;
+        if (letterGuess.indexOf(userPick) < 0){guessesLeft --;
+            document.getElementById("guessesLeft").textContent = guessesLeft;
+            letterGuess.push(userPick);
+            document.getElementById("guessedLetters").textContent = letterGuess;
+        }
     }
     
     else {
