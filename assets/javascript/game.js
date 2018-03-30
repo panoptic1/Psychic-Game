@@ -20,7 +20,8 @@ document.onkeyup = function(event) {
     console.log(randomLetter);
     var userPick = event.key; //User enters a key, and the script recognizes
     if (userPick !== randomLetter) {
-        if (letterGuess.indexOf(userPick) < 0){guessesLeft --;
+        if (letterGuess.indexOf(userPick) < 0) {
+            guessesLeft --;
             document.getElementById("guessesLeft").textContent = guessesLeft;
             letterGuess.push(userPick);
             document.getElementById("guessedLetters").textContent = letterGuess;
@@ -40,7 +41,7 @@ document.onkeyup = function(event) {
     if (guessesLeft == 0) {
         losses ++;
         randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
-        guessedLetters = [];
+        letterGuess = [];
         guessesLeft = 10; 
         document.getElementById("losses").textContent = losses;
         document.getElementById("guessedLetters").textContent = letterGuess;
